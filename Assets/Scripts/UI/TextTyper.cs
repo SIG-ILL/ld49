@@ -8,7 +8,7 @@ public sealed class TextTyper : MonoBehaviour
 	private TextMeshProUGUI textObject;
 
 	[SerializeField]
-	private float defaultTimeBetweenCharacters = 0.1f;
+	private float defaultTimeBetweenCharacters = 0.05f;
 
 	public bool IsTyping { get { return isTyping; } }
 

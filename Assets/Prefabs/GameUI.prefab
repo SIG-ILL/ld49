@@ -464,8 +464,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3882750431387764995}
-        m_TargetAssemblyTypeName: MessageBoxButtons, Assembly-CSharp
+      - m_Target: {fileID: 2211367618980084212}
+        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
         m_MethodName: OnMessageBoxButtonClicked
         m_Mode: 1
         m_Arguments:
@@ -756,6 +756,7 @@ GameObject:
   - component: {fileID: 3649297549925207050}
   - component: {fileID: 2437171447190902281}
   - component: {fileID: 3170115986967266392}
+  - component: {fileID: 55935413341820493}
   m_Layer: 5
   m_Name: AnswerTextBox
   m_TagString: Untagged
@@ -837,7 +838,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textObject: {fileID: 4287998260463972184}
-  defaultTimeBetweenCharacters: 0.1
+  defaultTimeBetweenCharacters: 0.02
+--- !u!114 &55935413341820493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4086918224978357283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10419669fa499264bacac6c4e8a3fbe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  situationProcessor: {fileID: 0}
+  lowEstimateButtonText: {fileID: 1512172764273651273}
+  mediumEstimateButtonText: {fileID: 6815249686383787603}
+  highEstimateButtonText: {fileID: 8831896490339522893}
 --- !u!1 &4643908564278349937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,8 +1052,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3882750431387764995}
-        m_TargetAssemblyTypeName: MessageBoxButtons, Assembly-CSharp
+      - m_Target: {fileID: 55935413341820493}
+        m_TargetAssemblyTypeName: AnswerMessageBox, Assembly-CSharp
         m_MethodName: OnHighTimeEstimateClicked
         m_Mode: 1
         m_Arguments:
@@ -1168,8 +1185,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3882750431387764995}
-        m_TargetAssemblyTypeName: MessageBoxButtons, Assembly-CSharp
+      - m_Target: {fileID: 55935413341820493}
+        m_TargetAssemblyTypeName: AnswerMessageBox, Assembly-CSharp
         m_MethodName: OnLowTimeEstimateClicked
         m_Mode: 1
         m_Arguments:
@@ -1435,8 +1452,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3882750431387764995}
-        m_TargetAssemblyTypeName: MessageBoxButtons, Assembly-CSharp
+      - m_Target: {fileID: 1246488046926729856}
+        m_TargetAssemblyTypeName: IncomingMessageBox, Assembly-CSharp
         m_MethodName: OnAnswerMessageClicked
         m_Mode: 1
         m_Arguments:
@@ -1702,8 +1719,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3882750431387764995}
-        m_TargetAssemblyTypeName: MessageBoxButtons, Assembly-CSharp
+      - m_Target: {fileID: 55935413341820493}
+        m_TargetAssemblyTypeName: AnswerMessageBox, Assembly-CSharp
         m_MethodName: OnMediumTimeEstimateClicked
         m_Mode: 1
         m_Arguments:
@@ -1726,8 +1743,7 @@ GameObject:
   - component: {fileID: 9145008239444344582}
   - component: {fileID: 9145008239444344583}
   - component: {fileID: 9145008239444344580}
-  - component: {fileID: 3882750431387764995}
-  - component: {fileID: 2070594903428729714}
+  - component: {fileID: 2211367618980084212}
   - component: {fileID: 5137784601639898205}
   - component: {fileID: 7085745607007079822}
   - component: {fileID: 1909413786445611963}
@@ -1823,7 +1839,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3882750431387764995
+--- !u!114 &2211367618980084212
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1832,25 +1848,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 9145008239444344581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f048c02228384b54798619c498706be2, type: 3}
+  m_Script: {fileID: 11500000, guid: a24bb66c9d035a34b9ad876eafed658f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageTextBox: {fileID: 9145008240041492698}
-  answerTextBox: {fileID: 4086918224978357283}
---- !u!114 &2070594903428729714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9145008239444344581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cde031a86b21074f9968717eddcb5d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  messageTextBox: {fileID: 9145008240041492698}
-  answerTextBox: {fileID: 4086918224978357283}
+  incomingMessageBox: {fileID: 1246488046926729856}
+  answerMessageBox: {fileID: 55935413341820493}
+  messageBoxButton: {fileID: 2325550888006664513}
+  situationProcessor: {fileID: 0}
 --- !u!114 &5137784601639898205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,8 +1872,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2070594903428729714}
-          m_TargetAssemblyTypeName: Canvas, Assembly-CSharp
+        - m_Target: {fileID: 2211367618980084212}
+          m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
           m_MethodName: OnCanvasClicked
           m_Mode: 0
           m_Arguments:
@@ -2004,6 +2008,7 @@ GameObject:
   - component: {fileID: 9145008240041492703}
   - component: {fileID: 9145008240041492700}
   - component: {fileID: 9145008240041492702}
+  - component: {fileID: 1246488046926729856}
   - component: {fileID: 5966260592993857701}
   m_Layer: 5
   m_Name: IncomingMessageTextBox
@@ -2084,7 +2089,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textObject: {fileID: 9145008240502977596}
-  defaultTimeBetweenCharacters: 0.1
+  defaultTimeBetweenCharacters: 0.02
+--- !u!114 &1246488046926729856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145008240041492698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d172febdea73248488050f2063864bf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5966260592993857701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2102,8 +2119,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3882750431387764995}
-          m_TargetAssemblyTypeName: MessageBoxButtons, Assembly-CSharp
+        - m_Target: {fileID: 1246488046926729856}
+          m_TargetAssemblyTypeName: IncomingMessageBox, Assembly-CSharp
           m_MethodName: OnMessageTextBoxClicked
           m_Mode: 0
           m_Arguments:

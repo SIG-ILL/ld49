@@ -54,7 +54,10 @@ public sealed class SituationGenerator : MonoBehaviour
 		situationStringBuilder.Append(imperativeCommand);
 
 		string situationString = StartStringWithUpperCase(situationStringBuilder.ToString());
-		EngineeringSituation situation = new EngineeringSituation { timeToFix = 10, defect = defect, defectivePart = machinePart, messageText = situationString };
+		EngineeringSituation situation = new EngineeringSituation {
+			timeToFix = 10, defect = defect, defectivePart = machinePart, messageText = situationString,
+			lowTimeEstimateOption = 2, mediumTimeEstimateOption = 4, highTimeEstimateOption = 8
+		};
 
 		return situation;
 	}
