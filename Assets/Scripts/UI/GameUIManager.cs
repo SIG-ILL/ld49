@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class GameUIManager : MonoBehaviour
 {
@@ -9,11 +10,17 @@ public class GameUIManager : MonoBehaviour
 	private AnswerMessageBox answerMessageBox;
 	[SerializeField]
 	private GameObject messageBoxButton;
+	[SerializeField]
+	private TextMeshProUGUI timeText;
 
 	[SerializeField]
 	private SituationProcessor situationProcessor;
+	[SerializeField]
+	private InGameTime ingameTime;
 
 	private void Awake() {
+		ingameTime.TimeUpdated += DisplayTime;
+
 		messageBoxButton.SetActive(false);
 	}
 
@@ -59,5 +66,11 @@ public class GameUIManager : MonoBehaviour
 	private void OnAnswerMessageBoxAnswerButtonClicked(int timeEstimate) {
 		situationProcessor.CurrentTimeEstimate = timeEstimate;
 		answerMessageBox.gameObject.SetActive(false);
+	}
+
+	private void DisplayTime(float timeInHours) {
+		float timeConvertedTo60MinuteDisplay = Mathf.Floor(timeInHours) + ((timeInHours - Mathf.Floor(timeInHours)) * 0.59f);
+
+		timeText.text = "Time\n" + timeConvertedTo60MinuteDisplay.ToString("0.00").Replace('.', ':');
 	}
 }

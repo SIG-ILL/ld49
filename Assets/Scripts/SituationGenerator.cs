@@ -24,12 +24,12 @@ public sealed class SituationGenerator : MonoBehaviour
 	private void Awake() {
 		materials = new List<string>() { "antimatter", "atmospheric", "atomic", "barometric", "darium", "dilithium", "energy", "gravitational", "ludarion", "magnetic", "matter", "phasic", "plasma", "quantum", "radiation", "roarum", "techyon", "tricyclic", "sonic", "subatomic", "subharmonic", "subspace", "temporal", "voltaic" };
 		machineFunctions = new List<string>() { "absorption", "alignment", "amplitude", "anomaly", "balancing", "capacitive", "conductive", "confinement", "conversion", "containment", "delay", "dimensional", "distribution", "field", "interflux", "resistive", "realignment", "restraining", "shielding", "stabilization", "wave" };
-		machineParts = new List<string>() { "absorber", "balancer", "beam", "capacitor", "chip", "coil", "compressor", "computer", "condenser", "conductor", "conduit", "container", "controller", "converter", "cooler", "crystal", "distributor", "engine", "exchanger", "generator", "inductor", "interface", "lock", "magnetizer", "manifold", "matrix", "overlay", "pressurizer", "radiator", "relay", "resistor", "shield", "sink", "stabilizer", "subsystem", "system", "transformer", "valve" };
+		machineParts = new List<string>() { "absorber", "balancer", "beam", "capacitor", "chip", "coil", "compressor", "computer", "condenser", "conductor", "conduit", "container", "controller", "converter", "cooler", "crystal", "distributor", "engine", "exchanger", "generator", "inductor", "interface", "lock", "magnetizer", "manifold", "matrix", "overlay", "pressurizer", "radiator", "regulator", "relay", "resistor", "shield", "sink", "stabilizer", "subsystem", "system", "transformer", "valve" };
 		defects = new List<string>() { "breach", "collapse", "congestion", "cutoff", "deadlock", "defective part", "failure", "feedback loop", "interference", "leak", "malfunction", "overflow", "overload", "pressure decrease", "pressure increase", "race condition", "rift", "shutdown" };
 		playerCharacterIntroTitles = new List<string>() { PLAYER_CHARACTER_ROLE, PLAYER_CHARACTER_ROLE + " " + PLAYER_CHARACTER_SURNAME, PLAYER_CHARACTER_RANK, PLAYER_CHARACTER_RANK + " " + PLAYER_CHARACTER_SURNAME, PLAYER_CHARACTER_RANK_SHORT, PLAYER_CHARACTER_FIRST_NAME, "Mr. " + PLAYER_CHARACTER_SURNAME };
 		introMotivations = new List<string>() { "step it up", "be adviced", "new information", "I have a job for you", "good work so far", "keep it up", "hurry", "pay attention", "incoming data" };
 		detectionSources = new List<string>() { "Our sensors are showing", "A crewmember reports", "The computer indicates", "Wurp core diagnostics revealed", "Complaints have been received about", "We are observing", "Our instruments seem to suggest" };
-		imperativeCommands = new List<string>() { "Get to it!", "Save us!", "Help!", "Fix it!", "Keep us going for a little while longer!", "Please engineer a solution!", "Do something about it, will you?", "Work your magic!", "Let Engineering have a look at it!", "I trust I can leave this in your capable hands!" };
+		imperativeCommands = new List<string>() { "Get to it!", "Save us!", "Help!", "Fix it!", "Keep us going for a little while longer!", "Please engineer a solution!", "Do something about it, will you?", "Work your magic!", "Let Engineering have a look at it!", "I trust I can leave this in your capable hands!", "See to it!" };
 
 		vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u' };
 	}
@@ -55,7 +55,7 @@ public sealed class SituationGenerator : MonoBehaviour
 
 		string situationString = StartStringWithUpperCase(situationStringBuilder.ToString());
 		EngineeringSituation situation = new EngineeringSituation {
-			timeToFix = 10, defect = defect, defectivePart = machinePart, messageText = situationString,
+			timeNeededToFix = 10, timeUntilWurpCoreDamage = 14, defect = defect, defectivePart = machinePart, messageText = situationString,
 			lowTimeEstimateOption = 2, mediumTimeEstimateOption = 4, highTimeEstimateOption = 8
 		};
 

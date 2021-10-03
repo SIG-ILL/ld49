@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Collections.Generic;
 
 public class AnswerMessageBox : MonoBehaviour
 {
@@ -18,9 +19,13 @@ public class AnswerMessageBox : MonoBehaviour
 	private EngineeringSituation activeSituation;
 	private Action<int> onAnswerButtonClickedAction;
 
+	private List<string> answerIntros;
+
 	private void Awake() {
 		textTyper = GetComponent<TextTyper>();
 		gameObject.SetActive(false);
+
+		answerIntros = new List<string>() { "Aye sir!", "Yes sir!", "I'm on it!", "I'll get to it!", "Right away!" };
 	}
 
 	public void OnLowTimeEstimateClicked() {
@@ -71,7 +76,8 @@ public class AnswerMessageBox : MonoBehaviour
 	}
 
 	private void TypeAnswerText() {
-		textTyper.TypeNewText("Aye sir! Fixing the " + activeSituation.defect + " in the " + activeSituation.defectivePart + " is going to take");
+		int answerIntroIndex = UnityEngine.Random.Range(0, answerIntros.Count);
+		textTyper.TypeNewText(answerIntros[answerIntroIndex] + " Fixing the " + activeSituation.defect + " in the " + activeSituation.defectivePart + " is going to take");
 	}
 
 	private void ActiveAnswerButtons() {
