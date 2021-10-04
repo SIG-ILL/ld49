@@ -13,7 +13,7 @@
 public sealed class OngoingEngineeringSituation {
 	public EngineeringSituation situation;
 	public float timeOfFixCompletion;
-	public float timeOfWurpCoreDamge;
+	public float timeOfWurpCoreDamage;
 	public float playerEstimationOfTimeOfFixCompletion;
 	public bool hasCausedStress;
 	public bool hasCausedWurpCoreDamage;

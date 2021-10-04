@@ -55,18 +55,23 @@ public class SituationProcessor : MonoBehaviour
 		 */
 
 		float currentTime = ingameTime.TimePassedInHours;
-		foreach(OngoingEngineeringSituation ongoingSituation in previousSituationsInProgress) {
-			if(currentTime >= ongoingSituation.playerEstimationOfTimeOfFixCompletion && !ongoingSituation.hasCausedStress) {
+		for(int i = previousSituationsInProgress.Count - 1; i >= 0; i--) {
+			OngoingEngineeringSituation ongoingSituation = previousSituationsInProgress[i];
+			float timeOfTaskFinished = Mathf.Max(ongoingSituation.timeOfFixCompletion, ongoingSituation.playerEstimationOfTimeOfFixCompletion);
+
+			if(currentTime > ongoingSituation.playerEstimationOfTimeOfFixCompletion && !ongoingSituation.hasCausedStress) {
 				IncreaseStress();
 				ongoingSituation.hasCausedStress = true;
 			}
 
-			if(currentTime >= ongoingSituation.timeOfWurpCoreDamge && !ongoingSituation.hasCausedWurpCoreDamage) {
+			if(currentTime >= ongoingSituation.timeOfWurpCoreDamage && !ongoingSituation.hasCausedWurpCoreDamage) {
 				DecreaseWurpCoreIntegrity();
 				ongoingSituation.hasCausedWurpCoreDamage = true;
 			}
 
-
+			if(currentTime >= timeOfTaskFinished) {
+				previousSituationsInProgress.RemoveAt(i);
+			}
 		}
 	}
 
